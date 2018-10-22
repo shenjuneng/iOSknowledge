@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CLap_PlayerFrontView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-DB-iaH" customClass="CLap_BasePlayerView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-im-IcL">
+                    <rect key="frame" x="0.0" y="236" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-YT-T2P">
+                            <rect key="frame" x="151.5" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="THp-bN-XL8"/>
+                                <constraint firstAttribute="width" secondItem="8wW-YT-T2P" secondAttribute="height" multiplier="1:1" id="WFM-2q-YNR"/>
+                            </constraints>
+                            <state key="normal" image="ad_play_f_p"/>
+                            <state key="selected" image="ad_pause_f_p"/>
+                            <connections>
+                                <action selector="clickPlayBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="qgu-Kb-KcN"/>
+                            </connections>
+                        </button>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUV-GZ-r1H">
+                            <rect key="frame" x="58" y="28" width="217" height="2"/>
+                            <color key="tintColor" red="1" green="0.29803921570000003" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </progressView>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lmp-h8-5HB">
+                            <rect key="frame" x="58" y="28" width="217" height="2"/>
+                            <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-1H-lB3">
+                            <rect key="frame" x="8" y="22" width="42" height="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hex-pP-t9w">
+                            <rect key="frame" x="283" y="22" width="42" height="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfV-TE-1tL">
+                            <rect key="frame" x="333" y="0.0" width="42" height="44"/>
+                            <state key="normal" image="player_scale01"/>
+                            <state key="selected" image="player_scale02"/>
+                            <connections>
+                                <action selector="clickFullScreen:" destination="iN0-l3-epB" eventType="touchUpInside" id="5fG-uI-QCh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30177119006849318" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="qfV-TE-1tL" secondAttribute="bottom" id="3m2-Ad-Rxw"/>
+                        <constraint firstItem="QUg-1H-lB3" firstAttribute="leading" secondItem="T3a-im-IcL" secondAttribute="leading" constant="8" id="4tP-0K-Ad4"/>
+                        <constraint firstAttribute="height" constant="44" id="GLQ-WK-m3h"/>
+                        <constraint firstAttribute="trailing" secondItem="qfV-TE-1tL" secondAttribute="trailing" id="GeL-UB-AQ0"/>
+                        <constraint firstItem="AUV-GZ-r1H" firstAttribute="leading" secondItem="Lmp-h8-5HB" secondAttribute="leading" id="JQn-8h-J0m"/>
+                        <constraint firstAttribute="trailing" secondItem="hex-pP-t9w" secondAttribute="trailing" constant="50" id="KS1-Bb-NCQ"/>
+                        <constraint firstItem="8wW-YT-T2P" firstAttribute="top" secondItem="T3a-im-IcL" secondAttribute="top" id="LoU-Ex-jdL"/>
+                        <constraint firstItem="qfV-TE-1tL" firstAttribute="top" secondItem="T3a-im-IcL" secondAttribute="top" id="NUz-2O-qSl"/>
+                        <constraint firstAttribute="trailing" secondItem="Lmp-h8-5HB" secondAttribute="trailing" constant="100" id="VWa-jh-y6k"/>
+                        <constraint firstItem="hex-pP-t9w" firstAttribute="centerY" secondItem="QUg-1H-lB3" secondAttribute="centerY" id="YVC-zt-DuR"/>
+                        <constraint firstItem="Lmp-h8-5HB" firstAttribute="centerY" secondItem="QUg-1H-lB3" secondAttribute="centerY" id="ZHF-GU-HfT"/>
+                        <constraint firstItem="qfV-TE-1tL" firstAttribute="leading" secondItem="hex-pP-t9w" secondAttribute="trailing" constant="8" id="bph-uY-kJT"/>
+                        <constraint firstAttribute="bottom" secondItem="QUg-1H-lB3" secondAttribute="bottom" constant="8" id="f8C-u3-X37"/>
+                        <constraint firstItem="AUV-GZ-r1H" firstAttribute="trailing" secondItem="Lmp-h8-5HB" secondAttribute="trailing" id="ffI-Y5-u2D"/>
+                        <constraint firstItem="AUV-GZ-r1H" firstAttribute="centerY" secondItem="Lmp-h8-5HB" secondAttribute="centerY" id="g8j-7G-FvU"/>
+                        <constraint firstItem="Lmp-h8-5HB" firstAttribute="leading" secondItem="T3a-im-IcL" secondAttribute="leading" constant="58" id="t4Q-cr-oJT"/>
+                        <constraint firstItem="8wW-YT-T2P" firstAttribute="centerX" secondItem="Lmp-h8-5HB" secondAttribute="centerX" id="zhi-Sf-dMp"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H11-OE-8S3">
+                    <rect key="frame" x="169" y="132" width="37" height="37"/>
+                </activityIndicatorView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-wv-i1n">
+                    <rect key="frame" x="170" y="20" width="34" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <attributedString key="attributedText">
+                        <fragment content="快进">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="17" name="FangSong"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="5vm-DB-iaH" secondAttribute="trailing" id="72Y-uf-ecT"/>
+                <constraint firstItem="H11-OE-8S3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Its-74-Dix"/>
+                <constraint firstItem="5vm-DB-iaH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OCk-ip-tsC"/>
+                <constraint firstAttribute="trailing" secondItem="T3a-im-IcL" secondAttribute="trailing" id="RTl-cC-9C8"/>
+                <constraint firstAttribute="bottom" secondItem="T3a-im-IcL" secondAttribute="bottom" constant="20" id="WMj-19-25i"/>
+                <constraint firstItem="eaH-wv-i1n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="aSA-fE-de6"/>
+                <constraint firstItem="eaH-wv-i1n" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="adu-Gr-pd1"/>
+                <constraint firstItem="H11-OE-8S3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cRn-rI-Xaz"/>
+                <constraint firstItem="5vm-DB-iaH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="e4u-hX-aQj"/>
+                <constraint firstAttribute="bottom" secondItem="5vm-DB-iaH" secondAttribute="bottom" id="hHc-Vg-FYN"/>
+                <constraint firstItem="T3a-im-IcL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nX3-am-hoH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityView" destination="H11-OE-8S3" id="Y4n-dI-YM0"/>
+                <outlet property="bufferProgress" destination="AUV-GZ-r1H" id="gAV-Tt-c64"/>
+                <outlet property="changeTimeLB" destination="eaH-wv-i1n" id="bV8-wc-MOz"/>
+                <outlet property="controlBackView" destination="T3a-im-IcL" id="5MY-K0-7DH"/>
+                <outlet property="currentTimeLB" destination="QUg-1H-lB3" id="EiT-Yz-ulQ"/>
+                <outlet property="fullScreenBtn" destination="qfV-TE-1tL" id="D5r-m6-hJw"/>
+                <outlet property="playBtn" destination="8wW-YT-T2P" id="rao-fo-PmO"/>
+                <outlet property="playProgress" destination="Lmp-h8-5HB" id="1rn-Nx-fVO"/>
+                <outlet property="playerView" destination="5vm-DB-iaH" id="DJL-Gb-xo2"/>
+                <outlet property="totalTimeLB" destination="hex-pP-t9w" id="yIE-So-4Hx"/>
+                <outletCollection property="gestureRecognizers" destination="Eve-DM-8jm" appends="YES" id="3Oq-2y-MER"/>
+                <outletCollection property="gestureRecognizers" destination="fD2-hp-W7r" appends="YES" id="FJm-xb-bIS"/>
+                <outletCollection property="gestureRecognizers" destination="5z5-TW-Y9l" appends="YES" id="fgY-er-UMc"/>
+            </connections>
+            <point key="canvasLocation" x="86.5" y="79"/>
+        </view>
+        <pinchGestureRecognizer id="Eve-DM-8jm">
+            <connections>
+                <action selector="GestToFullScreen:" destination="iN0-l3-epB" id="hgX-oc-UWm"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="fD2-hp-W7r">
+            <connections>
+                <action selector="panGesture:" destination="iN0-l3-epB" id="shB-r3-B7C"/>
+            </connections>
+        </panGestureRecognizer>
+        <tapGestureRecognizer id="5z5-TW-Y9l">
+            <connections>
+                <action selector="panShowControl:" destination="iN0-l3-epB" id="5SH-Cj-bec"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ad_pause_f_p" width="60" height="60"/>
+        <image name="ad_play_f_p" width="40" height="40"/>
+        <image name="player_scale01" width="16" height="16"/>
+        <image name="player_scale02" width="16" height="16"/>
+    </resources>
+</document>
