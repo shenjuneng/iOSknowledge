@@ -29,6 +29,10 @@
     objc_property_t *propertyList = class_copyPropertyList(object_getClass(p), &count);
     for (unsigned int i = 0;i < count;i++) {
         const char *propertyName = property_getName(propertyList[i]);
+        /*
+         <<<ViewController.m:(32)>>> property(屬性)-->name
+         <<<ViewController.m:(32)>>> property(屬性)-->age
+         */
         NSLog(@"property(屬性)-->%@", [NSString stringWithUTF8String:propertyName]);
     }
     
@@ -36,6 +40,15 @@
     Method *methodList = class_copyMethodList([p class], &count);
     for (unsigned int i = 0;i < count;i++) {
         Method method = methodList[i];
+        /*
+         <<<ViewController.m:(39)>>> method(对象方法)-->objcFunc1
+         <<<ViewController.m:(39)>>> method(对象方法)-->objcFunc2
+         <<<ViewController.m:(39)>>> method(对象方法)-->.cxx_destruct
+         <<<ViewController.m:(39)>>> method(对象方法)-->name
+         <<<ViewController.m:(39)>>> method(对象方法)-->setName:
+         <<<ViewController.m:(39)>>> method(对象方法)-->setAge:
+         <<<ViewController.m:(39)>>> method(对象方法)-->age
+         */
         NSLog(@"method(对象方法)-->%@", NSStringFromSelector(method_getName(method)));
     }
 
@@ -43,6 +56,10 @@
     for (unsigned int i = 0; i < count; i++) {
         Ivar myIvar = ivarList[i];
         const char *ivarName = ivar_getName(myIvar);
+        /*
+         <<<ViewController.m:(46)>>> Ivar(成员变量)---->_name
+         <<<ViewController.m:(46)>>> Ivar(成员变量)---->_age
+         */
         NSLog(@"Ivar(成员变量)---->%@", [NSString stringWithUTF8String:ivarName]);
     }
     
@@ -62,7 +79,9 @@
  测试调用拦截
  */
 - (void)testResolveInstanceMethod:(Person *)p {
-    [p performSelector:@selector(objcFunc22) withObject:@"test"];
+//    [p performSelector:@selector(objcFunc22) withObject:@"test"];
+    
+    [p performSelector:@selector(run) withObject:@"test"];
 }
 
 @end
