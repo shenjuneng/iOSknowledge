@@ -29,16 +29,44 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aOY-Bi-w01"/>
+                    <navigationItem key="navigationItem" id="aOY-Bi-w01">
+                        <barButtonItem key="rightBarButtonItem" title="新的封装" id="aeo-u9-oBn">
+                            <connections>
+                                <segue destination="ocR-fR-cih" kind="show" id="np5-80-fHm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="213.64317841079463"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Second View Controller-->
+        <scene sceneID="Lva-by-31X">
+            <objects>
+                <viewController id="ocR-fR-cih" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mrj-ce-Sn1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSW-4T-l0D">
+                                <rect key="frame" x="149" y="112" width="76" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="播放"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YCz-fd-3Va"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guR-vi-GqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="213.64317841079463"/>
+        </scene>
+        <!--Navcontroller-->
         <scene sceneID="NHb-r4-YtL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fBI-YJ-ILF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fBI-YJ-ILF" customClass="SJNavcontroller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="56L-Km-u2p">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CLap_PlayerFrontView.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
@@ -32,10 +33,19 @@
     [self.grayBack addSubview:self.playBackImageView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    
+    //    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
+    
+    [UIApplication sharedApplication].statusBarOrientation = UIDeviceOrientationPortrait;
+}
+
 - (IBAction)clickPlay:(UIButton *)sender {
     [self showPlayerView];
 }
-
 
 - (void)showPlayerView
 {
