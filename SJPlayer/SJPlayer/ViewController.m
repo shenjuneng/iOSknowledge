@@ -36,11 +36,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    //        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
-    
-    //    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
-    
-    [UIApplication sharedApplication].statusBarOrientation = UIDeviceOrientationPortrait;
+//    [UIApplication sharedApplication].statusBarOrientation = UIDeviceOrientationPortrait;
 }
 
 - (IBAction)clickPlay:(UIButton *)sender {

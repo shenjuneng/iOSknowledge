@@ -15,6 +15,19 @@
     return [AVPlayerLayer class];
 }
 
+/*
+ AVF_EXPORT NSString *const AVPlayerItemTimeJumpedNotification             NS_AVAILABLE(10_7, 5_0);    // the item's current time has changed discontinuously 播放时间跳跃式变化通知
+ AVF_EXPORT NSString *const AVPlayerItemDidPlayToEndTimeNotification      NS_AVAILABLE(10_7, 4_0);   // item has played to its end time 播放结束通知
+ AVF_EXPORT NSString *const AVPlayerItemFailedToPlayToEndTimeNotification NS_AVAILABLE(10_7, 4_3);   // item has failed to play to its end time 未能播放至结束时间
+ AVF_EXPORT NSString *const AVPlayerItemPlaybackStalledNotification       NS_AVAILABLE(10_9, 6_0);    // media did not arrive in time to continue playback 未能及时继续播放
+ AVF_EXPORT NSString *const AVPlayerItemNewAccessLogEntryNotification     NS_AVAILABLE(10_9, 6_0);    // a new access log entry has been added 添加了新的访问日志
+ AVF_EXPORT NSString *const AVPlayerItemNewErrorLogEntryNotification         NS_AVAILABLE(10_9, 6_0);    // a new error log entry has been added 添加了错误日志
+ 
+ // notification userInfo key                                                                    type
+ AVF_EXPORT NSString *const AVPlayerItemFailedToPlayToEndTimeErrorKey     NS_AVAILABLE(10_7, 4_3);   // NSError
+
+ */
+
 #pragma mark - set get
 - (void)setUrlStr:(NSString *)urlStr
 {

@@ -7,10 +7,11 @@
 //
 
 #import "SecondViewController.h"
-#import <AVKit/AVKit.h>
-#import <AVFoundation/AVFoundation.h>
+#import "CLap_VideoPlayerView.h"
 
 @interface SecondViewController ()
+
+
 
 @end
 
@@ -20,25 +21,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    AVPlayerViewController *avc = [[AVPlayerViewController alloc] init];
-    // http:\/\/vodymfmheh7.vod.126.net\/vodymfmheh7\/582f5226-ccb1-47e3-a553-d0500d20124c.mp4
-    NSURL * url = [NSURL URLWithString:@"http:\/\/vodymfmheh7.vod.126.net\/vodymfmheh7\/582f5226-ccb1-47e3-a553-d0500d20124c.mp4"];
-//    NSURL * url = [NSURL URLWithString:@"http://vodymfmheh7.vod.126.net//vodymfmheh7//1709f89a-2c6e-4af6-b6f7-85abd07696b6.mp4"];
-    avc.player = [AVPlayer playerWithURL:url];
-    [self addChildViewController:avc];
-    [self.view addSubview:avc.view];
-    [avc.player play];
 }
 
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
-
-//    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
-    
-    [UIApplication sharedApplication].statusBarOrientation = UIDeviceOrientationLandscapeLeft;
+/**
+ 安全区域
+ */
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    CLap_VideoPlayerView *view = [CLap_VideoPlayerView CLap_VideoPlayerView];
+//    view.urlStr = @"http://vodymfmheh7.vod.126.net/vodymfmheh7/582f5226-ccb1-47e3-a553-d0500d20124c.mp4";
+//    view.urlStr = @"http:\/\/vodymfmheh7.vod.126.net\/vodymfmheh7\/1709f89a-2c6e-4af6-b6f7-85abd07696b6.mp4";
+    view.urlStr = @"https://media.w3.org/2010/05/sintel/trailer.mp4";
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.safeAreaInsets.top);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(300);
+    }];
 }
 
 
